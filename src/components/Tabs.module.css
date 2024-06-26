@@ -1,0 +1,78 @@
+.tabContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+  padding: 2rem 0rem;
+  overflow-x: scroll;
+}
+.tabContainer::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.tab {
+  flex: 0 0 auto;
+  position: relative;
+  /* background: rgb(33, 36, 41); */
+  cursor: pointer;
+  height: 150px;
+  width: 300px;
+  /* border: 1px solid rgba(245, 247, 250, 0.06); */
+  padding: 24px;
+  border-radius: 24px;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  transition: var(--theme-transition);
+  overflow: hidden;
+  z-index: 1;
+  font-size: 1rem;
+}
+.tab:hover{
+  transform: scale(1.05);
+}
+.tab.dark {
+  background: rgb(33, 36, 41);
+  border: 1px solid rgba(245, 247, 250, 0.06);
+  color: var(--zinc1);
+  box-shadow: rgba(9, 13, 20, 0.4) 8px 8px 24px 0px,
+    rgba(224, 224, 255, 0.04) -4px -4px 8px 0px,
+    rgba(9, 13, 20, 0.4) 0px 1px 1px 0px;
+}
+.tab.light {
+  background: initial;
+  color: var(--zinc1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
+    0 8px 16px rgba(0, 0, 0, 0.11);
+}
+
+.tab:first-child {
+  margin-left: 2rem;
+}
+.tab:last-child {
+  margin-right: 2rem;
+}
+
+.tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(128deg, #0fa, #4579f5 53%, #9c42f5);
+  opacity: 0;
+  transition: var(--theme-transition);
+  z-index: -1;
+}
+
+.tab:hover::after {
+  opacity: 1;
+}
+
+.tabContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

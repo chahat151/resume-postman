@@ -1,0 +1,19 @@
+.actionBtn {
+  padding: 0.5rem;
+  border-radius: 0.7rem;
+  /* background: initial; */
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.actionBtn:active {
+  transform: translateY(2px) scale(0.9);
+  box-shadow: initial;
+  background: initial;
+}
+
+.actionIcon {
+  color: var(--white);
+  font-size: 2rem;
+  position: relative;
+  top: 1px;
+}

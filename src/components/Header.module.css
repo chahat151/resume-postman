@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  padding: 1rem 3.2rem;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--theme-transition);
+  color: var(--zinc4);
+  font-size: 1rem;
+  border-radius: 10rem;
+  margin: 1.5rem 2rem 0rem 2rem;
+}
+
+.header.dark {
+  background: rgb(33, 36, 41);
+  border: 1px solid rgba(245, 247, 250, 0.06);
+  color: var(--zinc1);
+  box-shadow: rgba(9, 13, 20, 0.4) 8px 8px 24px 0px,
+    rgba(224, 224, 255, 0.04) -4px -4px 8px 0px,
+    rgba(9, 13, 20, 0.4) 0px 1px 1px 0px;
+}
+.header.light {
+  background: initial;
+  color: var(--zinc1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 6px 8px rgba(0, 0, 0, 0.11),
+    0 8px 16px rgba(0, 0, 0, 0.11);
+}
