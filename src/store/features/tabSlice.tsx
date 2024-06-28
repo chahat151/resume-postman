@@ -6,6 +6,7 @@ interface state {
   tabsInfo: TabsType[];
   tabIndex: number;
   autoSaveMode: boolean;
+  editMode: boolean;
 }
 
 const initialState: state = {
@@ -14,15 +15,15 @@ const initialState: state = {
       name: "Email",
       logo: "IoIosMail",
       logoType: "io",
-      content: `Hi <userName>,
+      content: `Hi {userName},
 It's great connecting with you. How have you been?
-I found a job opportunity at <companyName> which perfectly overlaps with my skillset and wanted to check if you could provide me with a refferal for the same.
+I found a job opportunity at {companyName} which perfectly overlaps with my skillset and wanted to check if you could provide me with a refferal for the same.
 Here is the job link:
-<jobLink>
+{jobLink}
 Here is a link to my resume:
 Looking forward to hearing back from you, thank you for your time and consideration.
 Best Regards,
-<senderName>`,
+{senderName}`,
     },
     {
       name: "Cover Letter",
@@ -40,6 +41,7 @@ Best Regards,
   ],
   tabIndex: 0,
   autoSaveMode: false,
+  editMode: false,
 };
 
 export const tabSlice = createSlice({
@@ -52,17 +54,28 @@ export const tabSlice = createSlice({
     setContent: (state, action: PayloadAction<string>) => {
       state.tabsInfo[state.tabIndex].content = action.payload;
     },
-    changeAutoSaveMode: (state) => {
-      console.log(!state.autoSaveMode);
+    changeAutoSaveMode: (state) => {;
       state.autoSaveMode = !state.autoSaveMode;
     },
     reset: () => {
       return initialState;
     },
+    turnOnEditMode: (state) => {
+      state.editMode = true
+    },
+    turnOffEditMode: (state) => {
+      state.editMode = false
+    },
   },
 });
 
-export const { setTabIndex, setContent, changeAutoSaveMode, reset } =
-  tabSlice.actions;
+export const {
+  setTabIndex,
+  setContent,
+  changeAutoSaveMode,
+  reset,
+  turnOnEditMode,
+  turnOffEditMode,
+} = tabSlice.actions;
 
 export default tabSlice.reducer;

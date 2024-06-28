@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+
+// CSS
 import "./index.css";
 import "animate.css/animate.min.css";
 import "react-toastify/dist/ReactToastify.css";
+
 import App from "./App";
 import { store, persistor } from "./store/store";
 import { Provider } from "react-redux";

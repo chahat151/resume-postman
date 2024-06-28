@@ -17,3 +17,22 @@
   position: relative;
   top: 1px;
 }
+.icon {
+  width: 2rem;
+  height: 2rem;
+  fill: url(#gradient);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 5px); /* Position below the button */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  background-color: var(--white); /* Tooltip background color */
+  color: var(--zinc10); /* Tooltip text color */
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+  z-index: 1000; /* Ensure tooltip is above other elements */
+  opacity: 0.9; /* Adjust opacity as needed */
+}
